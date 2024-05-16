@@ -1,6 +1,3 @@
-//find a way to collect user input and determine if it's the user or computer who has logged on,
-// give variables accordingly and change the name at the start based on who logs on
-
 const ROCK = "rock";
 const PAPER = "paper";
 const SCISSORS = "scissors";
@@ -9,22 +6,6 @@ const randomValue = () => {
   let random = Math.floor(Math.random() * 3);
   return random;
 };
-
-// console.log(randomValue());
-
-// function choiceMaker() {
-//   if (randomValue === 0) {
-//     return ROCK;
-//   } else if (randomValue === 1) {
-//     return PAPER;
-//   } else if (randomValue === 2) {
-//     return SCISSORS;
-//   } else {
-//     console.log("error");
-//   }
-// }
-
-// console.log(choiceMaker());
 
 function getComputerChoice() {
   switch (randomValue()) {
@@ -43,7 +24,6 @@ function getComputerChoice() {
 function getHumanChoice() {
   let userInputText = prompt("What's your choice? Rock, paper or scissors");
   let finalUserInput = userInputText.toLowerCase();
-  //   let userInputNumeric = +userInputText;
   if (finalUserInput === "rock") {
     return ROCK;
   } else if (finalUserInput === "paper") {
@@ -60,10 +40,6 @@ var computerScore = 0;
 
 var humanChoice = getHumanChoice();
 var computerChoice = getComputerChoice();
-
-// console.log(humanChoice);
-// console.log(computerChoice);
-// playRound(humanChoice, computerChoice);
 
 function playRound(humanChoice, computerChoice) {
   if (
