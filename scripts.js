@@ -28,9 +28,17 @@ var randomValue = randomNumber();
 // console.log(choiceMaker());
 
 function getComputerChoice() {
-  console.log(choiceMaker());
+  if (randomValue === 0) {
+    return ROCK;
+  } else if (randomValue === 1) {
+    return PAPER;
+  } else if (randomValue === 2) {
+    return SCISSORS;
+  } else {
+    console.log("error");
+  }
 }
-getComputerChoice();
+console.log(getComputerChoice());
 
 // function getHumanChoice() {
 //   let userInputText = prompt(
@@ -40,5 +48,7 @@ getComputerChoice();
 //   let userInputNumeric = +userInputText;
 
 //   console.log(userInputNumeric)
+
+
 
 // }
