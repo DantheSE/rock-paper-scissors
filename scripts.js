@@ -45,19 +45,20 @@ const USER_PAPER = "user chose paper";
 const USER_SCISSORS = "user chose scissors";
 
 function getHumanChoice() {
-  let userInputText = prompt(
-    "what's your choice, 0 for rock, 1 for paper and 2 for scissors"
-  );
-
-  let userInputNumeric = +userInputText;
-  if (userInputNumeric === 0) {
+  let userInputText = prompt("What's your choice? Rock, paper or scissors");
+  let finalUserInput = userInputText.toLocaleLowerCase();
+  //   let userInputNumeric = +userInputText;
+  if (finalUserInput === "rock") {
     return USER_ROCK;
-  } else if (userInputNumeric === 1) {
+  } else if (finalUserInput === "paper") {
     return USER_PAPER;
-  } else if (userInputNumeric === 2) {
+  } else if (finalUserInput === "scissors") {
     return USER_SCISSORS;
   } else {
     console.log("error");
   }
 }
 console.log(getHumanChoice());
+
+var humanScore = 0;
+var computerScore = 0;
