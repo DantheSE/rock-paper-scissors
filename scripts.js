@@ -40,15 +40,24 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice());
 
-// function getHumanChoice() {
-//   let userInputText = prompt(
-//     "what's your choice, 0 for rock, 1 for paper and 3 for scissors"
-//   );
+const USER_ROCK = "user chose rock";
+const USER_PAPER = "user chose paper";
+const USER_SCISSORS = "user chose scissors";
 
-//   let userInputNumeric = +userInputText;
+function getHumanChoice() {
+  let userInputText = prompt(
+    "what's your choice, 0 for rock, 1 for paper and 2 for scissors"
+  );
 
-//   console.log(userInputNumeric)
-
-
-
-// }
+  let userInputNumeric = +userInputText;
+  if (userInputNumeric === 0) {
+    return USER_ROCK;
+  } else if (userInputNumeric === 1) {
+    return USER_PAPER;
+  } else if (userInputNumeric === 2) {
+    return USER_SCISSORS;
+  } else {
+    console.log("error");
+  }
+}
+console.log(getHumanChoice());
