@@ -38,8 +38,8 @@ function getHumanChoice() {
 var humanScore = 0;
 var computerScore = 0;
 
-var humanChoice = getHumanChoice();
-var computerChoice = getComputerChoice();
+var humanChoice = getHumanChoice;
+var computerChoice = getComputerChoice;
 
 function playRound(humanChoice, computerChoice) {
   if (
