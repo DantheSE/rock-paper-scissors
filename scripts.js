@@ -21,25 +21,25 @@ function getComputerChoice() {
   }
 }
 
-function getHumanChoice() {
-  let userInputText = prompt("What's your choice? Rock, paper or scissors");
-  let finalUserInput = userInputText.toLowerCase();
-  if (finalUserInput === "rock") {
-    return ROCK;
-  } else if (finalUserInput === "paper") {
-    return PAPER;
-  } else if (finalUserInput === "scissors") {
-    return SCISSORS;
-  } else {
-    console.log("error");
-  }
-}
+// function getHumanChoice() {
+//   let userInputText = prompt("What's your choice? Rock, paper or scissors");
+//   let finalUserInput = userInputText.toLowerCase();
+//   if (finalUserInput === "rock") {
+//     return ROCK;
+//   } else if (finalUserInput === "paper") {
+//     return PAPER;
+//   } else if (finalUserInput === "scissors") {
+//     return SCISSORS;
+//   } else {
+//     console.log("error");
+//   }
+// }
 
-var humanScore = 0;
-var computerScore = 0;
+let humanScore = 0;
+let computerScore = 0;
 
-var humanChoice = getHumanChoice;
-var computerChoice = getComputerChoice;
+let humanChoice;
+let computerChoice = getComputerChoice;
 
 function playRound(humanChoice, computerChoice) {
   if (
@@ -73,12 +73,28 @@ function playRound(humanChoice, computerChoice) {
   console.log("computer score: " + computerScore);
 }
 
-function playGame() {
-  for (i = 0; i <= 4; i++) {
-    humanChoice = getHumanChoice();
-    computerChoice = getComputerChoice();
-    playRound(humanChoice, computerChoice);
-  }
-}
+//creating the UI
+const player_choice_rock = document.querySelector(".rock");
+const player_choice_scissors = document.querySelector(".scissors");
+const player_choice_paper = document.querySelector(".paper");
+let players_choice_display = document.querySelector(".playerChoices");
+let score_display = document.querySelector(".scoreDisplay");
+let winnerDisplay = document.querySelector(".roundWinner");
 
-playGame();
+player_choice_rock.addEventListener("click", () => {
+  humanChoice = ROCK;
+  players_choice_display.textContent = "you chose rock";
+  return humanChoice;
+});
+
+player_choice_scissors.addEventListener("click", () => {
+  humanChoice = SCISSORS;
+  players_choice_display.textContent = "you chose scissors";
+  return humanChoice;
+});
+
+player_choice_paper.addEventListener("click", () => {
+  humanChoice = PAPER;
+  players_choice_display.textContent = "you chose paper";
+  return humanChoice;
+});
